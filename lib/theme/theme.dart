@@ -11,6 +11,7 @@ final lightMode = ThemeData(
   highlightColor: Color(0xFFBBDEFB),
   textTheme: TextTheme(
     bodyMedium: TextStyle(
+      fontSize: 15,
       letterSpacing: 0.5,
       fontStyle: GoogleFonts.montserrat().fontStyle,
     ),
@@ -28,8 +29,11 @@ final darkMode = ThemeData(
   primaryColor: Color(0xFFBC85FD),
   cardColor: Color(0xFF575757),
   highlightColor: Color(0xFFBC85FD),
-  textTheme: const TextTheme(
-    bodyMedium: TextStyle(letterSpacing: 0.5),
+  textTheme: TextTheme(
+    bodyMedium: TextStyle(
+        letterSpacing: 0.5,
+        fontStyle: GoogleFonts.montserrat().fontStyle,
+        fontSize: 15),
   ),
   inputDecorationTheme: const InputDecorationTheme(
     fillColor: Color(0xFF424242),

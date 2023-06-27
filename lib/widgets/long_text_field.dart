@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:new_chat_app/constants.dart';
 
 class LoginTextField extends StatelessWidget {
   final String? labelText;

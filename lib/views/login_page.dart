@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:new_chat_app/constants.dart';
+
 import 'package:new_chat_app/controllers/auth.dart';
 import 'package:new_chat_app/controllers/theme_controller.dart';
 import 'package:new_chat_app/widgets/long_text_field.dart';
@@ -10,7 +10,6 @@ import 'package:provider/provider.dart';
 import '../widgets/login_button.dart';
 
 class LoginPage extends StatelessWidget {
-  // const LoginPage({Key? key}) : super(key: key);
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   Auth _auth = Auth();
@@ -18,6 +17,16 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          Switch(
+            value: context.watch<ThemeController>().toggleTheme,
+            onChanged: (value) {
+              context.read<ThemeController>().toggleThemeUi();
+            },
+          )
+        ],
+      ),
       resizeToAvoidBottomInset: false,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -69,12 +78,6 @@ class LoginPage extends StatelessWidget {
             buttonText: 'Log in',
             icon: CupertinoIcons.forward,
           ),
-          Switch(
-            value: false,
-            onChanged: (value) {
-              context.read<ThemeController>().toggleThemeUi();
-            },
-          )
         ],
       ),
     );
